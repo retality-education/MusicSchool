@@ -15,7 +15,7 @@ namespace MusicSchool
     public partial class MusicSchoolControl : UserControl, IObserver
     {
 
-        Form1 form;
+        public Form1 form;
         private MusicSchool _musicSchool;
         private Dictionary<Student, StudentControl> _studentControls;
 

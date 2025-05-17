@@ -5,18 +5,16 @@ namespace MusicSchool
 {
     public partial class Form1 : Form
     {
-        private MusicSchoolController _controller;
+        public MusicSchoolController Controller;
 
         public Form1()
         {
             InitializeComponent();
+        }
 
-            var model = new MusicSchool();
-            var view = new MusicSchoolControl(model, this);
-            _controller = new MusicSchoolController(model, view);
-
-            Controls.Add(view);
-            this.Load += async (s, e) => await _controller.StartLessons();
+        private async void Form1_Load(object sender, EventArgs e)
+        {
+            await Controller.StartLessons();
         }
     }
 }

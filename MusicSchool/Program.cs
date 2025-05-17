@@ -13,7 +13,16 @@ namespace MusicSchool
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            var form1 = new Form1();
+           
+            var musicSchool = new MusicSchool();
+
+            var musicSchoolControl = new MusicSchoolControl(musicSchool, form1);
+
+            var musicSchoolController = new MusicSchoolController(musicSchool, musicSchoolControl);
+
+            Application.Run(form1);
         }
     }
 }

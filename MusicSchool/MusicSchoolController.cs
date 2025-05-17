@@ -15,9 +15,17 @@ namespace MusicSchool
         {
             _model = model;
             _view = view;
-            _model.Subscribe(view);
+
+            _model.Subscribe(_view);
+
+            Configure();
         }
 
+        public void Configure()
+        {
+            _view.form.Controller = this;
+            _view.form.Controls.Add(_view);
+        }
         public async Task StartLessons()
         {
             await _model.StartMusicLessons();
